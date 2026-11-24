@@ -1,0 +1,384 @@
+:root {
+  --black: #000000;
+  --merah: #d92020;
+  --merah-bg: #a81e1e;
+  --orange: #f38b00;
+  --merah-gelap: #5e1111;
+  --lynx-yellow: #facc15;
+  --putih: #e4e4e7;
+  --card-radius: 18px;
+  --smooth-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-smooth: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--black);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*    hitungan   */
+.hitung-section {
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #360808 0%,
+    
+    var(--black) 80% 
+  );
+  padding: 100px 80px 140px 80px;
+}
+
+.bg-light {
+  background: var(--bg-light);
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue-primary);
+  margin-bottom: 12px;
+}
+
+.eyebrow.white {
+  color: var(--putih);
+}
+
+h2 {
+  margin-top: 50px;
+  font-size: 3rem;
+  line-height: 1.25;
+  font-weight: 680;
+}
+
+.body-muted {
+  color: var(--text-muted);
+  margin: 40px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/*  */
+.hitung-header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.header-right {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.mobil-logo {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start; /* Membuat item di dalamnya rata atas (menggeser EVO ke atas) */
+  width: 100%;
+  padding: 36px -6px;
+  grid-column: 1 / -1;
+  margin-top: 200px;
+}
+
+.mobil-logo h1 {
+  color: transparent;
+  -webkit-text-stroke: 3px rgba(255, 255, 255, 0.45);
+  font-size: 18rem;
+  font-weight: 1500;
+  margin: 0;
+  line-height: 0;
+  letter-spacing: 0.15em;
+  opacity: 1;
+  filter: contrast(1.1);
+  transform: translateX(60px);
+}
+
+.mobil-logo img {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  opacity: 0.6;
+  filter: contrast(1.1);
+  transform: scale(160%);
+}
+
+.mobil-logo img:hover {
+  opacity: 1; /* Mobil menjadi lebih solid dan jelas */
+  transform: scale(160%); /* Sedikit membesar agar terasa hidup */
+  filter: 
+    contrast(1)
+    brightness(1)
+}
+
+/* cars  */
+
+.team-showcase {
+  background: radial-gradient(
+    circle at 50% 50%,
+    #360808 0%,
+    
+    var(--black) 80% 
+  );
+  padding-top: 80px;
+}
+
+.team-header-bg {
+  background-color: var(--bg-navy);
+  padding-bottom: 120px; /* Memberi ruang agar kartu bagian atas menumpuk ke area navy */
+}
+
+.team-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 80px;
+  margin-bottom: 90px;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 600;
+  transform: translateY(-48);
+}
+
+
+
+/* Red Crimson Track */
+.team-red-band {
+  background-color: var(--brand-red);
+  padding-bottom: 72px;
+  position: relative;
+}
+
+.carousel-stage {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  margin-top: -90px; /* Menarik stage ke atas sehingga memotong batas navy & merah */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+}
+
+/* Kartu Anggota Tim */
+.member-card {
+  position: absolute;
+  top: 0;
+  width: 460px;
+  transition:
+    transform 0.8s var(--smooth-ease),
+    opacity 0.6s ease,
+    filter 0.6s ease !important;
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+.member-photo-box {
+  width: 100%;
+  aspect-ratio: 1 / 1.02;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background: #0a1b33;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.5s var(--smooth-ease),
+    box-shadow 0.5s ease;
+}
+
+.member-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--card-radius) !important;
+  transition: transform 0.6s var(--smooth-ease);
+}
+
+/* Footer info di bawah kartu aktif */
+.member-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22px;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition:
+    opacity 0.45s ease 0.15s,
+    transform 0.45s var(--smooth-ease) 0.15s !important;
+}
+
+.member-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.btn-view-profile {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-view-profile:hover {
+  background: #ffffff;
+  color: var(--brand-red);
+  border-color: #ffffff;
+}
+
+/* State Posisi Kartu (Kiri, Tengah/Aktif, Kanan, Tersembunyi) */
+.member-card.is-center {
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1) !important;
+  z-index: 10;
+  opacity: 1;
+  filter: brightness(1);
+}
+
+.member-card.is-center .member-meta {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.member-card.is-left {
+  transform: translateX(-122%) translateY(34px) rotate(-6.5deg) scale(0.96);
+  z-index: 5;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.member-card.is-right {
+  transform: translateX(122%) translateY(34px) rotate(6.5deg) scale(0.96);
+  z-index: 5;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.member-card.is-far-left {
+  transform: translateX(-230%) translateY(90px) rotate(-12deg) scale(0.9);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.member-card.is-far-right {
+  transform: translateX(230%) translateY(90px) rotate(12deg) scale(0.9);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Section Become a Team Member */
+.career-section {
+  height: 700px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #360808 0%,
+    
+    var(--black) 80% 
+  );
+  padding: 36px 0 36px;
+  text-align: center;
+}
+
+.career-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.career-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+}
+
+.career-card {
+  width: 800px;
+  height: 280px;
+  max-width: 100%;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Garis tepi tipis elegan */
+  box-shadow: 0 20px 50px rgba(168, 30, 30, 0.25);
+}
+
+.career-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.career-card:hover img {
+  transform: scale(1.05);
+}
+
+.btn-outline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-pill:hover {
+  background: #ffffff;
+  color: var(--bg-navy);
+  border-color: #ffffff;
+}
+
+/* Responsif Layar Kecil */
+@media (max-width: 900px) {
+  .nav-pill {
+    display: none;
+  }
+  .carousel-stage {
+    height: 440px;
+  }
+  .member-card.is-left {
+    transform: translateX(-105%) translateY(24px) rotate(-5deg) scale(0.92);
+  }
+  .member-card.is-right {
+    transform: translateX(105%) translateY(24px) rotate(5deg) scale(0.92);
+  }
+}

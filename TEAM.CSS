@@ -1,0 +1,307 @@
+:root {
+  --black: #000000;
+  --merah: #d92020;
+  --merah-bg: #a81e1e;
+  --orange: #f38b00;
+  --merah-gelap: #5e1111;
+  --lynx-yellow: #facc15;
+  --putih: #e4e4e7;
+  --transition-smooth: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--black);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* history */
+.team-intro-section {
+  padding: 84px 0 96px;
+  height: 450px;
+  background: linear-gradient(to bottom, #5e1111 30%, #360808 50%, #1a0404 70%);
+  height: 450px;
+}
+
+.history-container {
+  display: grid;
+  margin: 0 auto;
+  max-width: 1400px;
+  grid-template-columns: 1.25fr 0.85fr;
+  align-items: start;
+  gap: 64px;
+}
+
+.eyebrow-tag {
+  margin-bottom: 24px;
+}
+
+.history-title {
+  font-size: 4rem;
+  line-height: 1.06;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.history-title strong {
+  display: block;
+  font-weight: 800;
+  letter-spacing: 10px;
+  margin-bottom: 24px;
+}
+
+.history-title .title-light {
+  display: block;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.intro-right {
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.intro-right p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.sct-section {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #360808 0%,
+
+    var(--black) 80%
+  );
+}
+
+.sct4-container {
+  max-width: 1560px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+/*  profil divisi */
+.divisi-section {
+  padding: 0 64px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #360808 20%,
+
+    var(--black) 80%
+  );
+}
+
+.divisi-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #360808 0%,
+
+    var(--black) 80%
+  );
+}
+
+.divisi-header {
+  margin-left: 24px;
+  padding: 36px;
+  margin-bottom: 24px;
+}
+
+.divisi-title {
+  margin-left: 50px;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--putih);
+}
+
+.divisi-quote {
+  width: 800px;
+  height: 200px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.24;
+  padding: 40px 40px;
+  margin-bottom: 50px;
+  letter-spacing: -0.025em;
+  color: var(--putih);
+}
+
+.divisi-quote span {
+  color: var(--merah);
+}
+
+.people-section {
+  padding: 48px 0 64px;
+}
+
+.section-title {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 4px max(40px, calc((100vw - 1320px) / 2 + 40px)) 16px;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.person-card {
+  flex: 0 0 295px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+.person-img-wrap {
+  width: 100%;
+  height: 330px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 3px solid transparent;
+  transition: border-color 0.25s ease;
+}
+
+.person-card:hover .person-img-wrap {
+  border-color: var(--petronas-teal-hover);
+}
+
+.person-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.35s ease;
+}
+
+.person-card:hover .person-img-wrap img {
+  transform: scale(1.03);
+  border: solid 2px var(--merah);
+}
+
+.person-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.name-arrow {
+  font-size: 18px;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.person-card:hover .name-arrow {
+  transform: translateX(4px);
+  color: var(--petronas-teal);
+}
+
+.person-card p {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #3f3f46;
+}
+
+/* Carousel Controls (Tombol Panah Teal & Dots) */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background-color: var(--petronas-teal-hover);
+  transform: scale(1.06);
+}
+
+.carousel-btn.disabled {
+  background-color: #e4e4e7;
+  color: #a1a1aa;
+  pointer-events: none;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d4d4d8;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.carousel-dot.active {
+  background-color: var(--petronas-teal);
+  transform: scale(1.25);
+}

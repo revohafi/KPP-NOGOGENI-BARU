@@ -1,0 +1,391 @@
+:root {
+  --black: #000000;
+  --merah: #d92020;
+  --merah-bg: #a81e1e;
+  --orange: #f38b00;
+  --lynx-yellow: #facc15;
+  --transition-smooth: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--black);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* --- SECTION 1: VIDEO HERO & MARQUEE --- */
+.video {
+  width: 100%;
+  height: 88vh; 
+  min-height: 620px;
+  overflow: hidden;
+  position: relative;
+  background-color: #000000;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.45) contrast(1.08);
+}
+
+/* Gradasi hitam pekat di bagian bawah video tepat di belakang area Discover */
+.video::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.72) 48%,
+    #000000 82%,
+    #000000 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tls-container {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.tls-track {
+  display: inline-flex;
+  will-change: transform;
+  animation: marqueeScroll 20s linear infinite;
+}
+
+.tls-item {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(3rem, 6.2vw, 5.8rem);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding-right: 48px;
+}
+
+.tls-item .word-solid {
+  color: var(--merah);
+  -webkit-text-stroke: 0;
+}
+
+.tls-item .word-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--merah);
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- SECTION 2: ABOUT NOGOGENI --- */
+.sct2-section {
+  position: relative;
+  margin-top: 0;
+  padding: 56px 5% 96px; 
+  background-color: #000000;
+  z-index: 3;
+}
+
+/* Pola titik-titik & pendaran merah marun stabil di sudut kiri atas Section 2 */
+.sct2-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+    radial-gradient(
+      circle at 14% 12%,
+      rgba(168, 22, 22, 0.36) 0%,
+      rgba(95, 10, 10, 0.14) 32%,
+      rgba(0, 0, 0, 0) 60%
+    );
+  background-size:
+    12px 12px,
+    100% 100%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 85%, transparent 100%);
+  pointer-events: none;
+}
+
+.sct2-grid {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.logo-team {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-team img {
+  max-width: 340px;
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: scale(1.25);
+}
+
+.sct2-content {
+  width: 100%;
+}
+
+.judul {
+  color: var(--merah);
+  display: block;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.sct2-content h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+
+.sct2-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+/* --- SECTION 3 --- */
+.sct3-section {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #360808 0%,
+    
+    var(--black) 80% 
+  );
+}
+
+.sct3-container {
+  max-width: 1560px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+.sct-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 26px;
+}
+
+.sct-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.sct3-bottom {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 36px;
+  padding: 20px;
+}
+
+.btn-teal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--merah);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-teal .arrow {
+  transition: transform 0.25s ease;
+}
+
+.btn-teal:hover {
+  background-color: var(--merah);
+  border-color: var(--merah);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-teal:hover .arrow {
+  transform: translateX(4px);
+}
+
+.drivers-section {
+  padding: 24px 0 88px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #360808 0%,
+    
+    var(--black) 80% 
+  );
+}
+
+.drivers-grid {
+  display: grid;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
+.driver-card {
+  position: relative;
+  height: 440px;
+  max-width: 1400px;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  background: radial-gradient(
+    circle at 25% 55%,
+    var(--merah-bg) 0%,
+    #0d0d0f 75%
+  );
+  border: 1px solid #1f2424;
+  display: flex;
+  justify-content: space-between;
+  padding: 36px;
+}
+
+.driver-name-box {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  padding: 16px 24px;
+  transition: var(--transition-smooth);
+}
+
+.driver-card:hover .driver-name-box {
+  transform: translate(4px, -2px) scale(1.06);
+}
+
+.driver-bg-type {
+  position: absolute;
+  left: 36px;
+  bottom: 44px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 0.85;
+  color: rgba(255, 255, 255, 0.6);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+}
+
+.driver-name-box h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--orange);
+}
+
+.corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: rgba(255, 255, 255, 0.85);
+  border-style: solid;
+  transition: var(--transition-smooth);
+}
+
+.corner.tl {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+}
+
+.corner.tr {
+  top: 0;
+  right: 0;
+  border-width: 2px 2px 0 0;
+}
+
+.corner.bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 2px 2px;
+}
+
+.corner.br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+}
+
+.driver-card:hover .corner {
+  border-color: var(--orange);
+  width: 18px;
+  height: 18px;
+}
+
+.driver-photo {
+  position: absolute;
+  right: 60px;
+  bottom: 0;
+  height: 92%;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+  transition: transform 0.45s ease;
+}
+
+.driver-card:hover .driver-photo {
+  transform: scale(1.03);
+}
+
+.main-nav {
+  display: none;
+}

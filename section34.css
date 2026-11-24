@@ -1,0 +1,336 @@
+:root {
+  --black: #181811;
+  --merah: #d92020;
+  --merah-bg: #a81e1e;
+   --merah-gelap: #5e1111;
+  --orange: #f38b00;
+  --lynx-yellow: #facc15;
+  --transition-smooth: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.achiev-section {
+  padding: 64px 5% 80px;
+  background-color: var(--merah-gelap);
+}
+
+.achiev-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Diubah dari flex-end ke flex-start agar rata kiri */
+  text-align: left;
+  max-width: 1500px; /* Disamakan dengan max-width .achiev-grid */
+  margin: 0 auto 32px auto; /* Kontainer rata tengah, isi tetap rata kiri */
+  padding: 0; /* Disesuaikan agar lurus dengan tepi kartu */
+  width: 100%;
+}
+
+.achiev-header h2 {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 8px 0; /* Dihapus 'auto'-nya agar tidak ke tengah */
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.sponsor-teal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--merah);
+  color: #181818;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.sponsor-teal .arrow {
+  transition: transform 0.25s ease;
+}
+
+.sponsor-teal:hover {
+  background-color: var(--merah);
+  border-color: var(--merah);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.sponsor-teal:hover .arrow {
+  transform: translateX(4px);
+}
+
+.achiev-header p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 680px;
+  margin: 0; /* Dihapus 'auto'-nya agar lurus di bawah h2 */
+  letter-spacing: 0.1px;
+  text-align: left;
+}
+
+.achiev-grid {
+  display: flex;
+  max-width: 1500px;
+  margin: 0 auto;
+  gap: 16px;
+  height: 460px;
+}
+
+.sol-card {
+  flex: 1;
+  background-color: var(--black);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border: solid 2px var(--black);
+  cursor: pointer;
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+}
+
+.sol-card-header {
+  padding: 24px;
+  z-index: 2;
+  transition: var(--transition-smooth);
+}
+
+.sol-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sol-card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+}
+
+.sol-card-arrow {
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: var(--transition-smooth);
+}
+
+.sol-card-desc {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  margin-top: 12px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.sol-card-img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.sol-card:hover {
+  flex: 2.3;
+  background-color: #000;
+}
+
+.sol-card:hover .sol-card-title {
+  color: var(--text-light);
+}
+
+.sol-card:hover .sol-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sol-card:hover .sol-card-desc {
+  max-height: 120px;
+  opacity: 1;
+}
+
+.sol-card:hover .sol-card-img {
+  height: 62%;
+}
+
+/* section 4 */
+
+.car-section {
+  background: radial-gradient(
+    circle at 50% 50%,
+    #360808 0%,
+    
+    var(--black) 80% 
+  );
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.car-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.car-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  margin-left: 40px;
+  max-width: 1400px;
+}
+
+.car-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.cards-container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: flex-start;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 10px 5px 25px 5px;
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 360px;
+  height: 400px;
+  background-color: #ffffff;
+  color: #0f172a;
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  max-width: 1500px;
+}
+
+.card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.card .arrow-icon {
+  align-self: flex-end;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Card Aktif / Hover (Warna Biru Tua) */
+.card.active,
+.card:hover {
+  background-color: var(--merah-bg);
+  color: #ffffff;
+  transform: translateY(-4px);
+}
+
+.card.active p,
+.card:hover p {
+  color: #e2e8f0;
+}
+
+
+.sponsor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.sponsor-container {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Menjaga judul di atas & area logo di tengah */
+}
+
+.sponsor-container h2 {
+  color: #000;
+  font-size: 32px;
+  font-weight: 800;
+  font-family: "plus jakarta sans", sans-serif;
+  padding-left: 5%;
+  margin: 0;
+}
+
+.sponsor-track {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+  width: max-content;
+  margin: auto 0;
+  animation: scrollLogos 28s linear infinite;
+}
+
+.sponsor-container:hover .sponsor-track {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  height: 60px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  transform: scale(150%);
+}
+
+.sponsor-btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 36px;
+  margin-right: 50px;
+  padding: 20px;
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

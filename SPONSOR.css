@@ -1,0 +1,222 @@
+:root {
+  --black: #000000;
+  --merah: #d92020;
+  --merah-bg: #a81e1e;
+  --orange: #f38b00;
+  --merah-gelap: #5e1111;
+  --lynx-yellow: #facc15;
+  --putih: #e4e4e7;
+  --transition-smooth: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--black);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.foto-section {
+  height: 100%;
+  width: 100%;
+}
+
+.foto-container {
+  position: relative;
+  height: 100%;
+  width: 1500px;
+}
+
+.foto-logo {
+  height: 1000px;
+  width: 1560px;
+  filter: brightness(0.5);
+}
+
+.foto-container .hero-content {
+  position: absolute;
+  bottom: 12%;          
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  z-index: 10;
+  margin-bottom: 0;    
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-bottom: 12vh;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
+
+.hero-content p {
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255);
+}
+
+.sponsors-section {
+  height: 500px;
+  width: 100%;
+}
+
+.sponsor-container {
+  height: 100%;
+  width: 100%;
+}
+
+.sponsor-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.sponsor-item:hover {
+  transform: scale(1.06);
+  opacity: 0.85;
+}
+
+.sponsor-item img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Tier 1: Title Sponsor (HP) */
+.tier-title-partner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.title-logo img {
+  height: 94px;
+  width: auto;
+}
+
+/* Tier 2: Premium Partners (6 Kolom Berwarna) */
+.tier-premium {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  align-items: center;
+  transform: scale(150%);
+  margin: 0 auto;
+  justify-items: center;
+  gap: 80px;
+  margin-bottom: 58px;
+  transform: scale(150%);
+}
+
+.tier-premium img {
+  max-height: 72px;
+  max-width: 120px;
+}
+
+/* Tier 3: Team Partners (2 Baris x 6 Kolom) */
+.tier-team-partners {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-items: center;
+  margin: 0 auto;
+  transform: scale(140%);
+  row-gap: 38px;
+  column-gap: 70px;
+  margin-bottom: 64px;
+}
+
+.tier-team-partners img {
+  max-height: 38px;
+  max-width: 112px;
+}
+
+/* Tier 4: Suppliers (2 Kelompok Kiri & Kanan) */
+.tier-suppliers-wrapper {
+  max-width: 920px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  transform: scale(130%);
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.supplier-cluster {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-items: center;
+  row-gap: 24px;
+  column-gap: 48px;
+}
+
+.supplier-cluster.right-cluster {
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 48px;
+}
+
+.supplier-cluster img {
+  max-height: 22px;
+  max-width: 68px;
+}
+
+/* Responsif Tablet & Mobile */
+@media (max-width: 960px) {
+  .main-nav {
+    display: none;
+  }
+  .tier-premium,
+  .tier-team-partners {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .tier-suppliers-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 540px) {
+  .tier-premium,
+  .tier-team-partners {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .supplier-cluster,
+  .supplier-cluster.right-cluster {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
