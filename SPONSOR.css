@@ -89,11 +89,13 @@ a {
 .sponsors-section {
   height: 500px;
   width: 100%;
+  background-color: #ffffff;
 }
 
 .sponsor-container {
   height: 100%;
   width: 100%;
+  background-color: #ffffff;
 }
 
 .sponsor-item {

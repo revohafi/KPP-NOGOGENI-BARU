@@ -229,3 +229,286 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCarousel();
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Mobile Menu Toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  }
+
+  // 2. Interactive YouTube Embed Loader ("The Fuel of Our Success")
+  const videoPoster = document.getElementById('videoPoster');
+  const videoIframeContainer = document.getElementById('videoIframeContainer');
+  // Ganti ID video YouTube di bawah dengan ID video profil resmi Nogogeni ITS
+  const YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ';
+
+  if (videoPoster && videoIframeContainer) {
+    videoPoster.addEventListener('click', () => {
+      videoPoster.style.display = 'none';
+      videoIframeContainer.style.display = 'block';
+      videoIframeContainer.innerHTML = `
+        <iframe 
+          src="https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0" 
+          title="Nogogeni ITS Team Profile 2026"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      `;
+    });
+  }
+
+  // 3. Touch / Click Support untuk Kartu Notable Figures (Mobile & Desktop)
+  const figureCards = document.querySelectorAll('.figure-card');
+  figureCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const isAlreadyActive = card.classList.contains('active');
+      figureCards.forEach((c) => c.classList.remove('active'));
+      if (!isAlreadyActive) {
+        card.classList.add('active');
+      }
+    });
+  });
+
+  // 4. Sponsor Carousel Prev / Next Controls
+  const sponsorTrack = document.getElementById('sponsorTrack');
+  const sponsorPrev = document.getElementById('sponsorPrev');
+  const sponsorNext = document.getElementById('sponsorNext');
+
+  if (sponsorTrack && sponsorPrev && sponsorNext) {
+    sponsorNext.addEventListener('click', () => {
+      const firstItem = sponsorTrack.firstElementChild;
+      if (firstItem) {
+        sponsorTrack.appendChild(firstItem);
+      }
+    });
+
+    sponsorPrev.addEventListener('click', () => {
+      const lastItem = sponsorTrack.lastElementChild;
+      if (lastItem) {
+        sponsorTrack.insertBefore(lastItem, sponsorTrack.firstElementChild);
+      }
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Scroll-to-top button in footer
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // 2. Image Zoom Lightbox Functionality
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  const zoomButtons = document.querySelectorAll('.zoom-btn');
+
+  zoomButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const wrapper = btn.closest('.image-wrapper');
+      const img = wrapper.querySelector('img');
+      if (img && lightboxModal && lightboxImg) {
+        lightboxImg.src = img.src;
+        lightboxModal.classList.add('active');
+      }
+    });
+  });
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', () => {
+      lightboxModal.classList.remove('active');
+    });
+  }
+
+  if (lightboxModal) {
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        lightboxModal.classList.remove('active');
+      }
+    });
+  }
+
+  const YOUTUBE_VIDEO_ID = 'pD9bQoGzoX0';
+
+if (videoPoster && videoIframeContainer) {
+  videoPoster.addEventListener('click', () => {
+    videoPoster.style.display = 'none';
+    videoIframeContainer.style.display = 'block';
+    videoIframeContainer.innerHTML = `
+      <iframe
+        src="https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0"
+        title="Nogogeni ITS Team Profile"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    `;
+  });
+}
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Switcher untuk Pill Tabs (Subholding vs AP & Services, News vs Magazine)
+  const tabGroups = document.querySelectorAll('.tab-pills');
+
+  tabGroups.forEach(group => {
+    const buttons = group.querySelectorAll('.pill-btn');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Reset active state di grup yang sama
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const targetId = btn.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+
+        // Jika panel tab tersedia (seperti pada Grup Bisnis Kami)
+        if (targetPanel) {
+          const parentSection = group.closest('section');
+          parentSection.querySelectorAll('.tab-panel').forEach(panel => {
+            panel.classList.remove('active');
+          });
+          targetPanel.classList.add('active');
+        }
+      });
+    });
+  });
+
+  // 2. Switcher untuk Sub-Tabs Berita (Siaran Pers, Berita CSR, Berita Energi)
+  const subTabButtons = document.querySelectorAll('.sub-tab-btn');
+  const newsTags = document.querySelectorAll('.news-tag');
+
+  subTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      subTabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const categoryLabel = btn.textContent.trim().toUpperCase();
+
+      // Update label kategori pada kartu berita sebagai simulasi filter dinamis
+      newsTags.forEach(tag => {
+        tag.textContent = categoryLabel;
+      });
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Sticky Navbar muncul saat scroll ke atas (seperti di detik 0:24 - 0:30 video)
+  const navbar = document.getElementById('navbar');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 300 && currentScrollY < lastScrollY) {
+      navbar.classList.add('visible');
+    } else if (currentScrollY > lastScrollY || currentScrollY <= 150) {
+      navbar.classList.remove('visible');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+
+  // 2. Toggle Menu Mobile
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  if (mobileMenuBtn && navMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  }
+
+  // 3. Animasi Counter Angka (USD 75,33 Miliar, USD 3,13 Miliar, 23,1)
+  const counters = document.querySelectorAll('.counter');
+  let counterStarted = false;
+
+  const runCounters = () => {
+    counters.forEach((counter) => {
+      const target = parseFloat(counter.getAttribute('data-target'));
+      const decimals = parseInt(counter.getAttribute('data-decimals'), 10) || 0;
+      const duration = 1600; // 1.6 detik
+      const startTime = performance.now();
+
+      const updateNumber = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Easing out cubic agar melambat halus saat mendekati angka akhir
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = (target * eased).toFixed(decimals);
+
+        // Format titik menjadi koma sesuai standar Indonesia di video (75,33)
+        counter.textContent = current.replace('.', ',');
+
+        if (progress < 1) {
+          requestAnimationFrame(updateNumber);
+        } else {
+          counter.textContent = target.toFixed(decimals).replace('.', ',');
+        }
+      };
+
+      requestAnimationFrame(updateNumber);
+    });
+  };
+
+  const statsSection = document.getElementById('statsSection');
+  if (statsSection) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !counterStarted) {
+            counterStarted = true;
+            runCounters();
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+    observer.observe(statsSection);
+  }
+
+  // 4. Interaksi Kartu & Tombol Panah Hubungan Investor
+  const investorCards = document.querySelectorAll('.investor-card');
+  const invPrev = document.getElementById('invPrev');
+  const invNext = document.getElementById('invNext');
+  let activeIndex = 0;
+
+  const setActiveInvestorCard = (index) => {
+    investorCards.forEach((card, idx) => {
+      card.classList.toggle('active', idx === index);
+    });
+  };
+
+  investorCards.forEach((card, idx) => {
+    card.addEventListener('mouseenter', () => {
+      activeIndex = idx;
+      setActiveInvestorCard(activeIndex);
+    });
+  });
+
+  if (invNext && invPrev && investorCards.length > 0) {
+    invNext.addEventListener('click', () => {
+      activeIndex = (activeIndex + 1) % investorCards.length;
+      setActiveInvestorCard(activeIndex);
+    });
+
+    invPrev.addEventListener('click', () => {
+      activeIndex = (activeIndex - 1 + investorCards.length) % investorCards.length;
+      setActiveInvestorCard(activeIndex);
+    });
+  }
+});

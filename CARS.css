@@ -36,7 +36,7 @@ a {
 
 /*    hitungan   */
 .hitung-section {
-  height: 100%;
+  height: 500px;
   background: radial-gradient(
     circle at 50% 50%,
     #360808 0%,
@@ -101,6 +101,7 @@ h2 {
   padding: 36px -6px;
   grid-column: 1 / -1;
   margin-top: 200px;
+  transform: translateY(10px);
 }
 
 .mobil-logo h1 {
@@ -145,7 +146,7 @@ h2 {
     
     var(--black) 80% 
   );
-  padding-top: 80px;
+  padding-top: 300px;
 }
 
 .team-header-bg {
@@ -166,23 +167,105 @@ h2 {
 }
 
 
+.sponsor-container {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Menjaga judul di atas & area logo di tengah */
+}
+
+.sponsor-track {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+  width: max-content;
+  margin: auto 0;
+  animation: scrollLogos 28s linear infinite;
+}
+
+.spec-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.spec-value {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #e4e4e7;
+  line-height: 1.45;
+}
+
+.sponsor-container:hover .sponsor-track {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  height: 60px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  transform: scale(150%);
+}
+
+.sponsor-btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 36px;
+  margin-right: 50px;
+  padding: 20px;
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
 
 /* Red Crimson Track */
 .team-red-band {
   background-color: var(--brand-red);
-  padding-bottom: 72px;
+  padding-bottom: 60px 0 72px;
   position: relative;
+  transform: translateY(50px);
 }
 
 .carousel-stage {
   position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 30%,
+    rgba(0, 0, 0, 0.72) 70%,
+    rgba(0, 0, 0, 0.92) 100%
+  );
   width: 100%;
   height: 540px;
-  margin-top: -90px; /* Menarik stage ke atas sehingga memotong batas navy & merah */
+  margin-top: -90px; 
   display: flex;
   justify-content: center;
   align-items: flex-start;
   overflow: visible;
+  filter: brightness(0.8);
 }
 
 /* Kartu Anggota Tim */
@@ -307,7 +390,7 @@ h2 {
     
     var(--black) 80% 
   );
-  padding: 36px 0 36px;
+  padding: 60px 0 36px;
   text-align: center;
 }
 

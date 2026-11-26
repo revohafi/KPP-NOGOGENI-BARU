@@ -16,10 +16,10 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
     <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="section.css" />
+    <link rel="stylesheet" href="SECTION.css" />
     <link rel="stylesheet" href="footer.css" />
     <link rel="stylesheet" href="section34.css" />
-    <link rel="stylesheet" href="CARS.css" />
+    <link rel="stylesheet" href="CONTACT.CSS" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
@@ -42,12 +42,108 @@
           <a href="CARS.html">Cars</a>
           <a href="ACHIEV.html">Achievment</a>
           <a href="SPOSOR.html">Sposoship</a>
-          <a href="#contact">Contact</a>
+          <a href="#contact" class="hdr-links active">Gallery</a>
         </nav>
       </div>
     </header>
 
-     <footer id="contact" class="bg-footer">
+    <section>
+      <section class="fuel-section" id="profile-video">
+        <!-- Dekorasi Garis Geometris Kanan -->
+        <div class="geo-lines top-right"></div>
+
+        <div class="container">
+          <h2 class="fuel-title">
+            <span class="text-red">The Fuel</span> of Our Success
+          </h2>
+
+          <div class="video-showcase" id="videoShowcase">
+            <div class="video-poster" id="videoPoster">
+              <img src="png/profile.jpg" alt="Nogogeni ITS Team Profile 2026" />
+              <div class="video-top-bar">
+                <img src="assets/logo-nogogeni.png" alt="Logo" />
+                <span>NOGOGENI ITS TEAM PROFILE 2026</span>
+              </div>
+              <button
+                class="yt-play-btn"
+                id="playVideoBtn"
+                aria-label="Play Video"
+              >
+                <svg viewBox="0 0 68 48" width="68" height="48">
+                  <path
+                    d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                    fill="#FF0000"
+                  ></path>
+                  <path d="M 45,24 27,14 27,34" fill="#FFFFFF"></path>
+                </svg>
+              </button>
+              <div class="video-bottom-badge">
+                Watch on <strong>YouTube</strong>
+              </div>
+            </div>
+
+            <!-- Iframe YouTube akan dimuat otomatis saat diklik -->
+            <div class="video-iframe-container" id="videoIframeContainer"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+<main class="rbr-main">
+   <section class="rbr-bento-grid">
+      
+      <!-- KARTU KIRI BESAR: Qatar Grand Prix 2026 -->
+      <article class="bento-card card-featured">
+       
+        <img src="png/gal-1.jpg" alt="Qatar Grand Prix 2026" class="card-bg" />
+        <div class="card-gradient"></div>
+        <div class="card-content">
+          <h2>KMHE 2023</h2>
+          <a href="https://www.its.ac.id/news/nogogeni-its-kembali-juarai-kontes-mobil-hemat-energi/" class="btn-read-story">Read Story</a>
+        </div>
+      </article>
+
+      <!-- KOLOM KANAN -->
+      <div class="bento-right-col">
+        
+        <!-- KARTU KANAN ATAS: Stop the clock -->
+        <article class="bento-card card-top-wide">
+          <img src="png/gal-2.jpeg" alt="Stop the clock: 8 unforgettable qualifying laps" class="card-bg" />
+          <div class="card-gradient"></div>
+          <div class="card-content">
+            <h3>Nogogeni VIII EVO</h3>
+            <p>Description .......</p>
+            <a href="https://www.detik.com/jatim/jatim-moncer/d-7326293/mobil-balap-listrik-nogogeni-its-terus-melesat-bersama-pt-sier" class="btn-read-story">Read Story</a>
+          </div>
+        </article>
+
+        <!-- KARTU KANAN BAWAH KIRI: Cyber Sale -->
+        <article class="bento-card card-bottom-left">
+          <img src="png/gal-3.jpg" alt="Cyber Sale: now live!" class="card-bg" />
+          <div class="card-gradient"></div>
+          <div class="card-content">
+            <h3>KMHE 2025</h3>
+            <p>Description .....</p>
+            <a href="https://jatimnow.com/baca-79541-nogogeni-viii-dan-x-evo-mobil-baru-its-siap-berlaga-di-kmhe-2025" class="btn-read-story">Read Story</a>
+          </div>
+        </article>
+
+        <!-- KARTU KANAN BAWAH KANAN: Timing, tyres... -->
+        <article class="bento-card card-bottom-right">
+          <img src="png/gal-4.jpg" alt="Timing, tyres, and a ticking clock" class="card-bg" />
+          <div class="card-gradient"></div>
+          <div class="card-content">
+            <h3>KMHE 2023</h3>
+            <p>Description .....</p>
+            <a href="https://kilasjatim.com/2022/11/04/nogogeni-its-juara-mobil-hemat-di-kmhe-2022/" class="btn-read-story">Read Story</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+   
+
+    <footer id="contact" class="bg-footer">
       <div class="footer-container">
         <div class="footer-top">
           <!-- Kolom 1: Logo & Lencana Tahun -->
@@ -82,7 +178,7 @@
                   <img src="png/location.png" alt="Location Icon" />
                 </div>
                 <p class="contact-text">
-                 Department of Industrial Mechanical Engineering, Institut Teknologi Sepuluh Nopember, Sukolilo, Surabaya, Jawa Timur, Indonesia - 60111.
+                  Department of Industrial Mechanical Engineering, Institut Teknologi Sepuluh Nopember, Sukolilo, Surabaya, Jawa Timur, Indonesia - 60111.
                 </p>
               </li>
 

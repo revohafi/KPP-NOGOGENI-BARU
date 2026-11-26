@@ -172,7 +172,7 @@ body {
   color: var(--merah);
   display: block;
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -222,8 +222,8 @@ body {
 }
 
 .sct-header h2 {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight:8700;
 }
 
 .sct3-bottom {
@@ -243,7 +243,7 @@ body {
   font-size: 1rem;
   font-weight: 700;
   padding: 14px 20px;
-  border-radius: 7px;
+  border-radius: 24px;
   text-decoration: none;
   transition: var(--transition-smooth);
 }
@@ -388,4 +388,184 @@ body {
 
 .main-nav {
   display: none;
+}
+
+.f1-hero {
+  width: 100%;
+  padding: 60px 24px;
+  position: relative;
+}
+
+.f1-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.8fr 0.8fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ==================== VISUAL WRAPPER (RB22 + Mobil) ==================== */
+.f1-visual-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 380px;
+}
+
+/* Teks Raksasa "RB22" di Background */
+.f1-bg-text {
+  font-family: var(--font-display);
+  font-size: min(15vw, 150px); /* Ukuran font yang otomatis menyesuaikan lebar layar */
+  line-height: 0.8;
+  letter-spacing: -6px;
+  font-weight: 900;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.f1-bg-text .text-white {
+  color: var(--text-white);
+}
+
+.f1-bg-text .text-red {
+  color: var(--merah-bg);
+}
+
+/* Mobil Balap yang menimpa Teks "RB22" */
+.f1-car-image {
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 102%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.f1-car-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+/* ==================== SIDEBAR INFO ==================== */
+.f1-info-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  z-index: 3;
+}
+
+/* Label Kecil Abu-Abu */
+.info-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+/* Nama Driver */
+.driver-names {
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-white);
+  letter-spacing: -0.2px;
+}
+
+/* Garis Pembatas */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 4px 0;
+}
+
+/* Stat Grid (Wins & Podiums) */
+.stats-grid {
+  display: flex;
+  gap: 60px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+/* Tombol Details */
+.btn-more {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: var(--red-crimson);
+  color: var(--text-white);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 12px 36px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-more:hover {
+  background-color: #f1103d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(208, 10, 48, 0.4);
+}
+
+/* ==================== MEDIA QUERIES (RESPONSIF) ==================== */
+@media (max-width: 992px) {
+  .f1-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .f1-visual-wrapper {
+    justify-content: center;
+    min-height: auto;
+  }
+
+  .f1-car-image {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: -60px;
+  }
+
+  .f1-info-sidebar {
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .stats-grid {
+    justify-content: center;
+    gap: 80px;
+  }
+
+  .btn-more {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .driver-names {
+    font-size: 1.4rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
 }
